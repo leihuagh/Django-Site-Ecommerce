@@ -14,7 +14,7 @@ def about(request):
         "title": "About Us",
         "content": "About Us Page"
     }
-    return render(request, 'index.html', context)
+    return render(request, 'about.html', context)
 
 
 def contact(request):
@@ -22,4 +22,4 @@ def contact(request):
         "title": "Contact Us",
         "content": "Contact Us Page"
     }
-    return render(request, 'index.html', context)
+    return render(request, 'contact.html', context)
