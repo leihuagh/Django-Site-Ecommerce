@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ecommerce - {% block head_title %}Base{% endblock head_title %} </title>
+</head>
+
+<body>
+    <nav>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+    </nav>
+
+    {% block main_contents %}
+    {% endblock main_contents %}
+
+    <footer>&copy; {% now 'Y' %}</footer>
+</body>
+
+</html>

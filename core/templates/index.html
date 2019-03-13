@@ -1,3 +1,10 @@
-<title>Ecommerce - {{ title }}</title>
+{% extends "base.html" %}
 
+{% block head_title %}
+{{ title }}
+{% endblock head_title %}
+
+
+{% block main_contents %}
 <h1>{{ content }}</h1>
+{% endblock main_contents %}
