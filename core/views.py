@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .forms import ContactForm
 
 
 def index(request):
@@ -18,13 +19,16 @@ def about(request):
 
 
 def contact(request):
+    form = ContactForm(request.POST or None)
     context = {
         "title": "Contact Us",
-        "content": "Contact Form"
+        "content": "Contact Form",
+        "form": form
     }
-    if (request.method == 'POST'):
-        print(request.POST)
-        print(request.POST.get('fullname'))
-        print(request.POST.get('email'))
-        print(request.POST.get('content'))
+    if form.is_valid():
+        print(form.cleaned_data)
+        print(form.cleaned_data.get('fullname'))
+        print(form.cleaned_data.get('email'))
+        print(form.cleaned_data.get('content'))
+        form = ContactForm()
     return render(request, 'contact.html', context)
