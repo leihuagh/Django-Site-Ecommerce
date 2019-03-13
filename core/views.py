@@ -2,12 +2,24 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'index.html', {})
+    context = {
+        "title": "Welcome",
+        "content": "Home Index"
+    }
+    return render(request, 'index.html', context)
 
 
 def about(request):
-    return render(request, 'index.html', {})
+    context = {
+        "title": "About Us",
+        "content": "About Us Page"
+    }
+    return render(request, 'index.html', context)
 
 
 def contact(request):
-    return render(request, 'index.html', {})
+    context = {
+        "title": "Contact Us",
+        "content": "Contact Us Page"
+    }
+    return render(request, 'index.html', context)
