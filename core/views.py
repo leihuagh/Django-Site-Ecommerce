@@ -20,6 +20,11 @@ def about(request):
 def contact(request):
     context = {
         "title": "Contact Us",
-        "content": "Contact Us Page"
+        "content": "Contact Form"
     }
+    if (request.method == 'POST'):
+        print(request.POST)
+        print(request.POST.get('fullname'))
+        print(request.POST.get('email'))
+        print(request.POST.get('content'))
     return render(request, 'contact.html', context)
