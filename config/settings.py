@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 try:
-    from .local_settings import DEBUG, SECRET_KEY, DATABASES
+    from .local_settings import DEBUG, SECRET_KEY, DATABASES, GOOGLE_MAP_API_KEY
 except ImportError:
     pass
 

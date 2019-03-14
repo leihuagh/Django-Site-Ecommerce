@@ -1,9 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block head_title %}
 {{ title }}
 {% endblock head_title %}
 
+{% block local_css %}
+<link rel="stylesheet" href="{% static 'css/maps/location.css' %}">
+{% endblock local_css %}
 
 {% block main_contents %}
 <div class="container">
@@ -15,7 +19,16 @@
                 <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
             </form>
         </div>
-        <div class="col-md-6  order-md-2">Hi</div>
+        <div class="col-md-6  order-md-2">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Find Us in Map</span>
+            </h4>
+            <div id="map"></div>
+        </div>
     </div>
 </div>
 {% endblock main_contents %}
+
+{% block local_js %}
+<script src="{% static 'js/maps/location.js' %}"></script>
+{% endblock local_js %}
