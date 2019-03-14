@@ -14,17 +14,13 @@
 </head>
 
 <body>
-    <nav>
-        <li><a href="{% url 'index' %}">Home</a></li>
-        <li><a href="{% url 'about' %}">About</a></li>
-        <li><a href="{% url 'contact' %}">Contact</a></li>
-    </nav>
+    {% include "base/navbar.html" %}
     <main role="main">
         {% block main_contents %}
         {% endblock main_contents %}
     </main>
 
-    <footer>&copy; {% now 'Y' %}</footer>
+    {% include "base/footer.html" %}
 
     {% include "base/js.html" %}
 
